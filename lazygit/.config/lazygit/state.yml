@@ -1,0 +1,11 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/brikkel/colors/monokai-pro.nvim
+- /home/brikkel/colors/tmux-monokai-pro
+startuppopupversion: 5
+customcommandshistory:
+- git add .
+- q
+- Lazy
+hidecommandlog: false
+ignorewhitespaceindiffview: false

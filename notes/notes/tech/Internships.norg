@@ -1,0 +1,30 @@
+* Virtual machines within kubernetes
+  This research has been picked up multiple times within SUE, so there is
+  something to build upon. Companies hmight have legacy applications that
+  cannot easily be containerized. This might prevent customors from making the
+  move to kubernetes, so in an ideal world it would be possible to manage some
+  virtualmachines within your kubernetes setup. Most previous research has
+  looked into kubevirt, however this prefereably be run on a bare metal node,
+  to prevent virtualization nesting.
+
+  The task of this research is to be able to seamlesly use EC2 instances, or
+  other cloud based virtual machines, within a kubernetes environment.
+
+
+
+* Terraform state update for re-architecting of Terraform code
+  This research explores the process of updating Terraform state files when
+  re-architecting Terraform code. It involves importing existing resources into
+  the state, refactoring code to match the new desired infrastructure state,
+  and planning and executing state migrations. The goal is to ensure a smooth
+  transition to the new architecture while minimising confilicts and
+  maintaining the integrity of the infrastructure.
+
+* Automated configuration drift
+  The adoption of IaC can help significantly reduce the administrative overhead
+  for IT departments. Managing multiple environments in a multi-cloud setup,
+  however, introduces complexity. Without adequatly securing and/or pipelining
+  the creation of resources within code. This can lead to (significant)
+  security tisks, additional costs, and depending on tooling used breakage of
+  existing IaC code or applications.
+

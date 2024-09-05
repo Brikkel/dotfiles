@@ -1,0 +1,8 @@
+font_family MesloLGS NF
+include ./papercolor-kitty/papercolor-dark.conf
+
+
+# BEGIN_KITTY_THEME
+# 3024 Night
+include current-theme.conf
+# END_KITTY_THEME

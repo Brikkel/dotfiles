@@ -1,0 +1,200 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](accent)\
+$os\
+$username\
+[](fg:accent bg:dimmed5)\
+$directory\
+[](fg:dimmed5 bg:background)\
+$git_branch\
+$git_status\
+\
+$fill\
+\
+$terraform\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:background bg:dimmed5)\
+$docker_context\
+$aws\
+[](fg:dimmed5 bg:accent)\
+$cmd_duration\
+[](fg:accent)\
+$line_break$character"""
+
+palette = 'monokai-pro'
+
+[palettes.monokai-pro]
+text = '#fcfcfa'
+background = '#2d2a2e'
+black = '#19181a'
+
+darkblue = '#3399CC'
+blue = '#78DCE8'
+green = '#a9dc76'
+orange = '#fc9867'
+purple = '#ab9df2'
+pink = '#ff6188'
+red = '#ff5c57'
+yellow = '#ffd866'
+
+accent = '#ab9df2'
+
+dimmed1 = '#c1c0c0'
+dimmed2 = '#939293'
+dimmed3 = '#727072'
+dimmed4 = '#5b595c'
+dimmed5 = '#403e41'
+
+[fill]
+symbol = ' '
+
+
+[os]
+disabled = false
+style = "bg:accent fg:background"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true 
+style_user = "bg:accent fg:background"
+style_root = "bg:accent fg:background"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:accent bg:dimmed5"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"CODE" = "󰲋 "
+
+[terraform]
+symbol = "󱁢"
+style = "bg:dimmed1"
+format = '[[ ╲ $symbol( $version) ](fg:dimmed1 bg:background)]($style)'
+
+[aws]
+symbol = '󰸏'
+style = 'bg:dimmed5 fg:purple'
+format = '[$symbol ($profile )(\($region\) )]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:background"
+format = '[[ $symbol $branch ](fg:dimmed1 bg:background)]($style)'
+
+[git_status]
+style = "bg:green"
+format = '[[($all_status$ahead_behind )](fg:dimmed1 bg:background)]($style)'
+
+[nodejs]
+detect_extensions = []
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[c]
+symbol = " "
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:blue"
+format = '[[ ╱ $symbol( $version) ](fg:dimmed1 bg:background)]($style)'
+
+[php]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[java]
+symbol = " "
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[python]
+pyenv_version_name = true
+detect_extensions = []
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:background bg:blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:darkblue"
+format = '[[ $symbol( $context) ](fg:accent bg:dimmed5)]($style)'
+
+# [time]
+# disabled = false
+# time_format = "%R"
+# style = "bg:purple"
+# format = '[[  $time ](fg:background bg:purple)]($style)'
+
+[cmd_duration]
+disabled = false
+min_time = 4000
+show_milliseconds = false
+style = "bg:purple"
+format = '[[  $duration ](fg:background bg:accent)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:text)'
+error_symbol = '[>](bold fg:pink)'
+vimcmd_symbol = '[<](bold fg:green)'
+vimcmd_replace_one_symbol = '[<](bold fg:purple)'
+vimcmd_replace_symbol = '[<](bold fg:purple)'
+vimcmd_visual_symbol = '[<](bold fg:yellow)'
