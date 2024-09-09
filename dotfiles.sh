@@ -19,7 +19,7 @@ fi
 
 # Backup the .config folder
 backup_config() {
-  echo "mv $HOME/.config $BACKUP_DIR/.config"
+  mv $HOME/.config $BACKUP_DIR/.config
   echo ""
 }
 
@@ -38,14 +38,13 @@ backup_dotfiles() {
     local relative_path="${item#$package}"
         
     # Debug message to see of the name of the relative path is correct
-    echo "relative_path: $relative_path"
+    # echo "relative_path: $relative_path"
     
     if [ "$relative_path" = "/.config" ]; then
-      echo config!!
       continue
     fi
 
-    echo "mv $HOME$relative_path $BACKUP_DIR$relative_path"
+    mv $HOME$relative_path $BACKUP_DIR$relative_path
     echo ""
 
 
@@ -57,6 +56,7 @@ stow_package() {
   local package="$1"
 
   echo "stow $package"
+  stow $package
 }
 
 # Iterate over each folder in the dotfiles directory
@@ -67,14 +67,17 @@ for dir in "$DOTFILES_DIR"/*; do
   base_dir=$(basename "$dir")
     
   [[ "$dir" == "$DOTFILES_DIR/.git" ]] && continue
+  [[ ! -d "$dir" ]] && continue
+
 
   backup_dotfiles "$dir"
 done
 
 for dir in "$DOTFILES_DIR"/*; do
   [[ "$dir" == "$DOTFILES_DIR/.git" ]] && continue
+  [[ ! -d "$dir" ]] && continue
 
-  stow_package $dir
+  stow_package $(basename "${dir%/}")
 done
 
 echo "Dotfiles setup completed."
