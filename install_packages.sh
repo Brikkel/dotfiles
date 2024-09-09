@@ -1,17 +1,47 @@
 #!/bin/bash
 
 # Common programs to install on all supported distributions
-common_programs=("git" "curl" "neovim")
+common_programs=(
+    "git"         # git
+    "lazygit"     # 
+    "curl"        # 
+    "neovim"      # 
+    "tmux"        # 
+    "awscli"      # 
+    "zsh"         # 
+    "feh"         # 
+    "flameshot"   # 
+    "fzf"         # 
+    "gimp"        # 
+    "nodejs"      # 
+    "starship"    # 
+    "stow"        # 
+    "xclip"       #
+    "zsh"         # 
+)
+
+linux_programs=(
+    "i3"          # 
+    "i3blocks"    # 
+    "i3lock"      # 
+    "i3status"    # 
+    "kitty"       # 
+    "pavucontrol" # 
+    "rofi"        # 
+    "xrandr"      # 
+    "zoxide"      # 
+)
 
 # Distro-specific programs
-ubuntu_programs=("i3")
-macos_programs=("wget") 
-fedora_programs=("i3" "dnf-plugins-core")
+ubuntu_programs=()
+macos_programs=() 
+fedora_programs=("dnf-plugins-core")
 
 install_ubuntu() {
     echo "Detected Ubuntu. Installing Ubuntu-specific programs: ${ubuntu_programs[*]}"
     sudo apt update
     sudo apt install -y "${common_programs[@]}"
+    sudo apt install -y "${linux_programs[@]}"
     sudo apt install -y "${ubuntu_programs[@]}"
 }
 
@@ -33,6 +63,7 @@ install_fedora() {
     echo "Detected Fedora. Installing Fedora-specific programs: ${fedora_programs[*]}"
     sudo dnf upgrade --refresh -y
     sudo dnf install -y "${common_programs[@]}"
+    sudo dnf install -y "${linux_programs[@]}"
     sudo dnf install -y "${fedora_programs[@]}"
 }
 
