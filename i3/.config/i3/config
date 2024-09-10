@@ -243,13 +243,13 @@ bar {
 }
 
 
-exec ~/.config/i3/scripts/set_resolution.sh
+# exec ~/.config/i3/scripts/set_resolution.sh
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness_up.sh
-bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_down.sh
+# bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness_up.sh
+# bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_down.sh
 
 # Keyboard brightness control
-bindsym XF86KbdBrightnessUp exec sudo ~/.config/i3/scripts/keyboard_brightness_up.sh
-bindsym XF86KbdBrightnessDown exec sudo ~/.config/i3/scripts/keyboard_brightness_down.sh
+# bindsym XF86KbdBrightnessUp exec sudo ~/.config/i3/scripts/keyboard_brightness_up.sh
+# bindsym XF86KbdBrightnessDown exec sudo ~/.config/i3/scripts/keyboard_brightness_down.sh
 
