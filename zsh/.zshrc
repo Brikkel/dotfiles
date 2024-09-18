@@ -83,8 +83,6 @@ source ~/.config/zsh/zsh-syntax-highlighting.sh
 # Alliases
 alias pair360="bluetoothctl scan on && sleep 3 && bluetoothctl connect EF:CF:79:63:69:BC"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'

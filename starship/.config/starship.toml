@@ -4,6 +4,7 @@ format = """
 [](accent)\
 $os\
 $username\
+$hostname\
 [](fg:accent bg:dimmed5)\
 $directory\
 [](fg:dimmed5 bg:background)\
@@ -88,6 +89,11 @@ show_always = true
 style_user = "bg:accent fg:background"
 style_root = "bg:accent fg:background"
 format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = true
+style = "bg:accent fg:background"
+format = '[ $hostname ]($style)'
 
 [directory]
 style = "fg:accent bg:dimmed5"
