@@ -252,6 +252,7 @@ bar {
 
 
 # exec ~/.config/i3/scripts/set_resolution.sh
+exec --no-startup-id picom -b -f
 exec --no-startup-id feh --bg-fill /home/brikkel/Pictures/Squirt_wallpaper.png
 # Brightness control
 # bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness_up.sh
