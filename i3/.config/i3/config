@@ -47,7 +47,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # Super shortcuts, using the windows / command key
-bindsym $sup+1 exec ~/.config/i3/scripts/main_display.sh
+bindsym $sup+1 exec ~/.config/i3/scripts/display_main.sh
 bindsym $sup+2 exec ~/.config/i3/scripts/display_home.sh
 bindsym $sup+h exec xrandr --output eDP-1 --rotate left --auto && xinput set-prop 12 --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 bindsym $sup+j exec xrandr --output eDP-1 --rotate normal --auto && xinput set-prop 12 --type=float "Coordinate Transformation Matrix" 0 0 0 0 0 0 0 0 0
@@ -252,7 +252,7 @@ bar {
 
 
 # exec ~/.config/i3/scripts/set_resolution.sh
-
+exec --no-startup-id feh --bg-fill /home/brikkel/Pictures/Squirt_wallpaper.png
 # Brightness control
 # bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness_up.sh
 # bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_down.sh
