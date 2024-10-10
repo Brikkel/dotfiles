@@ -985,3 +985,5 @@ cd ..
 exit
 export AWS_PROFILE='default'
 exit
+clear
+exit

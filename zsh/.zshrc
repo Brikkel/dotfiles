@@ -77,14 +77,22 @@ zinit cdreplay -q
 # Shell integrations
 eval "$(zoxide init --cmd cd zsh)"
 
+# Path
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
 # Syntax colors
 source ~/.config/zsh/zsh-syntax-highlighting.sh
+
+# Environment variables
+export AWS_PROFILE="sue"
 
 # Alliases
 alias pair360="bluetoothctl scan on && sleep 3 && bluetoothctl connect EF:CF:79:63:69:BC"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
 alias ls='ls --color'
 alias vim='nvim'
+alias v='nvim'
 alias c='clear'
+alias tf='terraform'
+alias k='kubectl'

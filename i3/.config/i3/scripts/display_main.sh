@@ -1,4 +1,4 @@
 #!/bin/bash
 
-xrandr --output DP-1 --mode 2560x1440 --primary --output eDP-1 --off 
+xrandr --output eDP-1 --mode 1920x1080 --primary --output DP-1 --off
 feh --bg-fill /home/brikkel/Pictures/Squirt_wallpaper.png

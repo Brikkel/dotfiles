@@ -47,8 +47,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # Super shortcuts, using the windows / command key
-bindsym $sup+1 exec ~/.config/i3/scripts/main_display.sh
+bindsym $sup+1 exec ~/.config/i3/scripts/display_main.sh
 bindsym $sup+2 exec ~/.config/i3/scripts/display_home.sh
+bindsym $sup+h exec xrandr --output eDP-1 --rotate left --auto && xinput set-prop 12 --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+bindsym $sup+j exec xrandr --output eDP-1 --rotate normal --auto && xinput set-prop 12 --type=float "Coordinate Transformation Matrix" 0 0 0 0 0 0 0 0 0
+
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
@@ -77,12 +80,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -125,14 +122,14 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:  "
-set $ws2 "2:  "
-set $ws3 "3:  "
-set $ws4 "4: 󱞂 "
-set $ws5 "5: ? "
-set $ws6 "6: ? "
+set $ws2 "2:  "
+set $ws3 "3: 󱞂 "
+set $ws4 "4: 󰬱 "
+set $ws5 "5:  "
+set $ws6 "6: 󱞂 "
 set $ws7 "7: ? "
-set $ws8 "8:  "
-set $ws9 "9:  "
+set $ws8 "8: ? "
+set $ws9 "9: ? "
 set $ws0 "10:  "
 
 # switch to workspace
@@ -159,15 +156,22 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws0
 
-
-exec --no-startup-id i3-msg "workspace $ws2; exec firefox"
+assign [class="google-chrome"] number $ws2
+exec --no-startup-id i3-msg "workspace $ws2; exec google-chrome --profile-directory='Default'"
+exec sleep 1
+exec --no-startup-id i3-msg "workspace $ws4; exec google-chrome --profile-directory='Profile 3'"
 exec sleep 1
 # exec --no-startup-id i3-msg "workspace $ws3; exec firefox --new-window 'https://drive.google.com/drive/home'"
 
 assign [class="obsidian"] number $ws4
+exec --no-startup-id obsidian
 
-assign [class="Ferdium"] number $ws8
+
+assign [class="Ferdium"] number $ws5
 exec --no-startup-id ferdium
+
+assign [class="Spotify"] number $ws0
+exec --no-startup-id flatpak run com.spotify.Client
 
 #exec sleep 1
 #exec --no-startup-id i3-msg "workspace $ws0; exec flatpak run com.spotify.Client"
@@ -244,7 +248,8 @@ bar {
 
 
 # exec ~/.config/i3/scripts/set_resolution.sh
-
+exec --no-startup-id picom -b -f
+exec --no-startup-id feh --bg-fill /home/brikkel/Pictures/Squirt_wallpaper.png
 # Brightness control
 # bindsym XF86MonBrightnessUp exec ~/.config/i3/scripts/brightness_up.sh
 # bindsym XF86MonBrightnessDown exec ~/.config/i3/scripts/brightness_down.sh
