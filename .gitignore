@@ -1,2 +1,3 @@
 aws/.aws/credentials
 aws/.aws/config
+tmux/.config/tmux/plugins/*
